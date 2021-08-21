@@ -1,11 +1,14 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { createUser } from './api';
 import { UserForm } from './UserForm';
 
 
 export const CreateUser = () => {
-    const onSubmit = (data) =>{
-        createUser(data)
+    const history = useHistory()
+    const onSubmit = async (data) =>{
+        await createUser(data)
+        history.push("/")
     };
     return (
         <div className="container">

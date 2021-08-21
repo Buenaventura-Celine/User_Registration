@@ -28,12 +28,12 @@ export const UserList = () => {
                     <tbody>
                         {
                             items.map(user => (
-                                <tr key={user.id}>
+                                <tr key={user._id}>
                                     <td>
                                         {user.name}
                                     </td>
                                     <td>
-                                        <Link to={`/edit/${user.id}`}>Edit</Link>
+                                        <Link to={`/edit/${user._id}`}>Edit</Link>
                                     </td>
                                 </tr>
                             ))

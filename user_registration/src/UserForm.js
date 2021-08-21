@@ -8,11 +8,8 @@ export const UserForm = ({ user, onSubmit }) =>{
         {name: user ? user.name : ""}
     });
 
-    const history = useHistory();
-
     const submitHandler = handleSubmit((data) =>{
         onSubmit(data)
-        history.push("/") 
     });
 
     return (

@@ -8,3 +8,5 @@ export const createUser = (user) => fetch("http://localhost:4000/create", {
     },
     body: JSON.stringify(user)
 })
+
+export const getUser = (id) => fetch(`http://localhost:4000/${id}`).then(res => res.json())
