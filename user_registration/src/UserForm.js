@@ -3,8 +3,14 @@ import  { useForm } from "react-hook-form";
 
 export const UserForm = ({ user, onSubmit }) =>{
     const { register, handleSubmit} = useForm({
-        defaultValues:
-        {name: user ? user.name : ""}
+        defaultValues:{
+            name: user ? user.name : "",
+            first_name: user ? user.first_name : "",
+            middle_name: user ? user.middle_name : "",
+            address_one: user ? user.address_one : "",
+            address_two: user ? user.address_two : "",
+            postal_code: user ? user.postal_code : ""
+        }
     });
 
     const submitHandler = handleSubmit((data) =>{

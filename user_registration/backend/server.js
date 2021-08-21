@@ -50,6 +50,11 @@ app.post("/:id", (req, res) => {
           res.status(404).send("User not found")
       }else{
         user.name = req.body.name
+        user.first_name = req.body.first_name
+        user.middle_name = req.body.middle_name
+        user.address_one = req.body.address_one
+        user.address_two = req.body.address_two
+        user.postal_code = req.body.postal_code
         user.save().then(user => {
             res.json(user)
         }).catch(err => res.status(500).send(err.message));
