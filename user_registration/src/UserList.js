@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getUsers } from './api';
-import Grid from '@material-ui/core/Grid'
 
 //for designing
 import { withStyles, makeStyles } from '@material-ui/core/styles';
@@ -12,16 +11,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { createMuiTheme } from '@material-ui/core/styles';
-
-const theme = createMuiTheme({
-    palette : {
-        type : 'dark',
-        background : {
-            default : "#000000"
-        }
-    }
-})
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
