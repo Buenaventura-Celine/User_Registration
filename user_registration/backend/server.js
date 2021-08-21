@@ -55,6 +55,7 @@ app.post("/:id", (req, res) => {
         user.address_one = req.body.address_one
         user.address_two = req.body.address_two
         user.postal_code = req.body.postal_code
+        user.birthday = req.body.birthday
         user.save().then(user => {
             res.json(user)
         }).catch(err => res.status(500).send(err.message));

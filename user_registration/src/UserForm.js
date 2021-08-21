@@ -9,7 +9,8 @@ export const UserForm = ({ user, onSubmit }) =>{
             middle_name: user ? user.middle_name : "",
             address_one: user ? user.address_one : "",
             address_two: user ? user.address_two : "",
-            postal_code: user ? user.postal_code : ""
+            postal_code: user ? user.postal_code : "",
+            birthday: user ? user.birthday : ""
         }
     });
 
@@ -135,6 +136,24 @@ export const UserForm = ({ user, onSubmit }) =>{
             </div>
             <br></br>
             
+            {/* Postal Code */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Birthday</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Birthday"
+                        className="form-control"
+                        type="date"
+                        name="birthday"
+                        id="birthday"
+                        autoComplete="off"
+                        {...register("birthday", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
 
             <br></br>
             <div className="form-group">

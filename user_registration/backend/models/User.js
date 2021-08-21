@@ -6,7 +6,8 @@ const User = mongoose.Schema({
     middle_name:{type: String,},
     address_one:{type: String,},
     address_two:{type: String,},
-    postal_code:{type: String,}
+    postal_code:{type: String,},
+    birthday:{type: String,}
 });
 
 module.exports = mongoose.model("User", User);

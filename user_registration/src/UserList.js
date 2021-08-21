@@ -61,6 +61,7 @@ export const UserList = () => {
                         <StyledTableCell>Last Name</StyledTableCell>
                         <StyledTableCell>Frist Name</StyledTableCell>
                         <StyledTableCell>Middle Name</StyledTableCell>
+                        <StyledTableCell>Birthday</StyledTableCell> 
                         <StyledTableCell>Gender</StyledTableCell>
                         <StyledTableCell>Civil Status</StyledTableCell>
                         <StyledTableCell>Nationality</StyledTableCell>
@@ -75,6 +76,7 @@ export const UserList = () => {
                             <StyledTableCell>{user.name}</StyledTableCell>
                             <StyledTableCell>{user.first_name}</StyledTableCell>
                             <StyledTableCell>{user.middle_name}</StyledTableCell>
+                            <StyledTableCell>{user.birthday}</StyledTableCell>
                             <StyledTableCell>{user.gender}</StyledTableCell>
                             <StyledTableCell>{user.civil_status}</StyledTableCell>
                             <StyledTableCell>{user.nationality}</StyledTableCell>
