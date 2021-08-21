@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getUsers } from './api';
+import Grid from '@material-ui/core/Grid'
 
 //for designing
 import { withStyles, makeStyles } from '@material-ui/core/styles';
@@ -18,13 +19,9 @@ const theme = createMuiTheme({
         type : 'dark',
         background : {
             default : "#000000"
-        },
-        secondary : {
-            main : '#E19A4C'
         }
     }
 })
-
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -45,14 +42,13 @@ const StyledTableRow = withStyles((theme) => ({
 }))(TableRow);
 
 const useStyles = makeStyles({
-    
-    table :{
-        maxWidth: 700,
-        marginLeft: '2rem',
-        marginRight: '2rem',
-        marginTop: '4rem',
-        marginBottom: '4rem',
-    }
+   table:{
+       width: '96%',
+       marginTop: '3rem',
+       marginLeft: '2rem',
+       marginRight: '2rem',
+       marginBottom: '2rem'
+   }
 });
 
 export const UserList = () => {
@@ -70,25 +66,41 @@ export const UserList = () => {
 
     return(
         <TableContainer className={classes.table} component={Paper}>
-        <Table aria-label="customized table">
-            <TableHead>
-                <TableRow>
-                    <StyledTableCell>Name</StyledTableCell>
-                    <StyledTableCell>Action</StyledTableCell>
-                </TableRow>
-            </TableHead>
-            <TableBody>
-                {items.map((user) => (
-                    <StyledTableRow key={user._id}>
-                        <StyledTableCell>{user.name}</StyledTableCell>
-                        <StyledTableCell>
-                            <Link to={`/edit/${user._id}`}>Edit</Link>
-                        </StyledTableCell>
-                    </StyledTableRow>
-                ))}
-            </TableBody>
-        </Table>
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <StyledTableCell>Last Name</StyledTableCell>
+                        <StyledTableCell>Frist Name</StyledTableCell>
+                        <StyledTableCell>Middle Name</StyledTableCell>
+                        <StyledTableCell>Gender</StyledTableCell>
+                        <StyledTableCell>Civil Status</StyledTableCell>
+                        <StyledTableCell>Nationality</StyledTableCell>
+                        <StyledTableCell>Phone Number</StyledTableCell>
+                        <StyledTableCell>Email</StyledTableCell>
+                        <StyledTableCell>Action</StyledTableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {items.map((user) => (
+                        <StyledTableRow key={user._id}>
+                            <StyledTableCell>{user.name}</StyledTableCell>
+                            <StyledTableCell>{user.first_name}</StyledTableCell>
+                            <StyledTableCell>{user.middle_name}</StyledTableCell>
+                            <StyledTableCell>{user.gender}</StyledTableCell>
+                            <StyledTableCell>{user.civil_status}</StyledTableCell>
+                            <StyledTableCell>{user.nationality}</StyledTableCell>
+                            <StyledTableCell>{user.phone_number}</StyledTableCell>
+                            <StyledTableCell>{user.email}</StyledTableCell>
+                            <StyledTableCell>
+                                <Link to={`/edit/${user._id}`}>Edit</Link>
+                            </StyledTableCell>
+                        </StyledTableRow>
+                    ))}
+                </TableBody>
+            </Table>
         </TableContainer>
+
+
         // <div className="container">
         //     <div className="mt-3">
         //         <h3>User List</h3>
