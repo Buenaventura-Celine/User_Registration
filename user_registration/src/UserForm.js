@@ -14,7 +14,7 @@ export const UserForm = ({ user, onSubmit }) =>{
     return (
         <form onSubmit={submitHandler}>
             <div className="form-group">
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Last Name:</label>
                 <input
                     className="form-control"
                     type="text"
