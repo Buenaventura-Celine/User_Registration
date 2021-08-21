@@ -1,10 +1,11 @@
 import React from 'react';
+import { createUser } from './api';
 import { UserForm } from './UserForm';
 
 
 export const CreateUser = () => {
     const onSubmit = (data) =>{
-        alert(JSON.stringify(data));
+        createUser(data)
     };
     return (
         <div className="container">
