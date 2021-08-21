@@ -1,6 +1,5 @@
 import React from 'react';
 import  { useForm } from "react-hook-form";
-import { useHistory } from 'react-router';
 
 export const UserForm = ({ user, onSubmit }) =>{
     const { register, handleSubmit} = useForm({
@@ -15,10 +14,10 @@ export const UserForm = ({ user, onSubmit }) =>{
     return (
         <form onSubmit={submitHandler}>
             <div className="form-group">
-                <label htmlFor="name">Text:</label>
+                <label htmlFor="name">Name:</label>
                 <input
                     className="form-control"
-                    type="name"
+                    type="text"
                     name="name"
                     id="name"
                     autoComplete="off"

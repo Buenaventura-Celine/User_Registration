@@ -3,7 +3,7 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const User = require("./models/User")
 
-mongoose.connect('mongodb://127.0.0.1:27017/users', {useNewUrlParser: true})
+mongoose.connect('mongodb://127.0.0.1:27017/users', {useNewUrlParser: true});
 
 mongoose.connection.once('open', () =>{
     console.log("Mongodb connection established successfully")
@@ -40,6 +40,20 @@ app.get("/:id", (req, res) => {
     const id = req.params.id;
     User.findById(id, (err, user) => {
         res.json(user);
+    });
+});
+
+app.post("/:id", (req, res) => {
+    const id = req.params.id;
+    User.findById(id, (err, user) => {
+      if(!user){
+          res.status(404).send("User not found")
+      }else{
+        user.name = req.body.name
+        user.save().then(user => {
+            res.json(user)
+        }).catch(err => res.status(500).send(err.message));
+      }
     });
 });
 
