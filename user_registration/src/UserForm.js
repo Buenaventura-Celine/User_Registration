@@ -10,7 +10,8 @@ export const UserForm = ({ user, onSubmit }) =>{
             address_one: user ? user.address_one : "",
             address_two: user ? user.address_two : "",
             postal_code: user ? user.postal_code : "",
-            birthday: user ? user.birthday : ""
+            birthday: user ? user.birthday : "",
+            gender: user ? user.gender : "",
         }
     });
 
@@ -151,6 +152,38 @@ export const UserForm = ({ user, onSubmit }) =>{
                             required: "Required",
                         })}
                     />
+                </div>
+            </div>
+            <br></br>
+
+            {/* Gender */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Gender</label>
+                <div className="col-sm-6">
+                    <input 
+                        type="list"
+                        list="gender" 
+                        name="gender"
+                        className="form-control custom-select"
+                        {...register("gender", {
+                            required: "Required",
+                        })}/>
+                        <datalist id="gender">
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </datalist>
+                    
+                    {/* <input
+                        placeholder="Birthday"
+                        className="form-control"
+                        type="date"
+                        name="birthday"
+                        id="birthday"
+                        autoComplete="off"
+                        {...register("birthday", {
+                            required: "Required",
+                        })}
+                    /> */}
                 </div>
             </div>
             <br></br>
