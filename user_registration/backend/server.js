@@ -1,7 +1,8 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
-const User = require("./models/User")
+const User = require("./models/User");
+const { response } = require("express");
 
 mongoose.connect('mongodb://127.0.0.1:27017/users', {useNewUrlParser: true});
 
@@ -66,6 +67,18 @@ app.post("/:id", (req, res) => {
         }).catch(err => res.status(500).send(err.message));
       }
     });
+});
+
+app.delete('/:id', async (req, res) => {
+    let id = req.params.id;
+    let user;
+    try {
+      user = await User.findByIdAndDelete(id);
+    } catch (err) {
+      throw err;
+    }
+    if (user) return res.json({ deleted: true });
+    return res.json({ deleted: false });
 });
 
 app.listen(PORT, () =>{

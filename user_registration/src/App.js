@@ -27,28 +27,12 @@ function App() {
       <MenuAppBar/>
         <Switch>
           <Route exact path="/" component={UserList}/>
-        <Route path="/edit/:id" component={EditUser}/>
-        <Route path="/create" component={CreateUser}/>
+          <Route path="/edit/:id" component={EditUser}/>
+          <Route path="/create" component={CreateUser}/>
         </Switch>
       </div>
     </ThemeProvider> 
     </Router>
-    // <div>
-    //   <nav className="navbar bg-light navbar-expand-lg navbar-light">
-    //       <ul className="navbar-nav mr-auto">
-    //         <li className="navbar-item">
-    //           <Link to="/" className="nav-link">Users</Link>
-    //         </li>
-    //         <li className="navbar-item">
-    //           <Link to="/create" className="nav-link">Add User</Link>
-    //         </li>
-    //       </ul>
-    //     </nav>
-    //   <Switch>
-        
-    // </Switch>
-    // </div>
-    
   );
 }
 
