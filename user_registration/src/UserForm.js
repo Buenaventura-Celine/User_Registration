@@ -12,6 +12,7 @@ export const UserForm = ({ user, onSubmit }) =>{
             postal_code: user ? user.postal_code : "",
             birthday: user ? user.birthday : "",
             gender: user ? user.gender : "",
+            civil_status: user ? user.gender : "",
         }
     });
 
@@ -164,7 +165,7 @@ export const UserForm = ({ user, onSubmit }) =>{
                         type="list"
                         list="gender" 
                         name="gender"
-                        className="form-control custom-select"
+                        className="form-control"
                         {...register("gender", {
                             required: "Required",
                         })}/>
@@ -172,18 +173,28 @@ export const UserForm = ({ user, onSubmit }) =>{
                             <option value="Female">Female</option>
                             <option value="Male">Male</option>
                         </datalist>
-                    
-                    {/* <input
-                        placeholder="Birthday"
+                </div>
+            </div>
+            <br></br>
+
+            {/* Civil Status*/}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Civil Status</label>
+                <div className="col-sm-6">
+                    <input 
+                        type="list"
+                        list="civil_status" 
+                        name="civil_status"
                         className="form-control"
-                        type="date"
-                        name="birthday"
-                        id="birthday"
-                        autoComplete="off"
-                        {...register("birthday", {
+                        {...register("civil_status", {
                             required: "Required",
-                        })}
-                    /> */}
+                        })}/>
+                        <datalist id="civil_status">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                        </datalist>
                 </div>
             </div>
             <br></br>
