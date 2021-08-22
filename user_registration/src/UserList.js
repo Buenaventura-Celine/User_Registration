@@ -11,6 +11,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -83,7 +86,12 @@ export const UserList = () => {
                             <StyledTableCell>{user.phone_number}</StyledTableCell>
                             <StyledTableCell>{user.email}</StyledTableCell>
                             <StyledTableCell>
-                                <Link to={`/edit/${user._id}`}>Edit</Link>
+                              <IconButton color="default" aria-label="upload picture" href={`/edit/${user._id}`}>
+                                <EditIcon/>
+                              </IconButton>
+                              <IconButton color="secondary" aria-label="upload picture" href={`/edit/${user._id}`}>
+                                <DeleteIcon/>
+                              </IconButton>
                             </StyledTableCell>
                         </StyledTableRow>
                     ))}
