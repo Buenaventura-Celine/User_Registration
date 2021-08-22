@@ -9,7 +9,10 @@ const User = mongoose.Schema({
     postal_code:{type: String},
     birthday:{type: String},
     gender:{type: String},
-    civil_status:{type: String}
+    civil_status:{type: String},
+    nationality:{type: String},
+    phone_number:{type: String},
+    email:{type: String}
 });
 
 module.exports = mongoose.model("User", User);

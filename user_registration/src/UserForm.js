@@ -12,7 +12,10 @@ export const UserForm = ({ user, onSubmit }) =>{
             postal_code: user ? user.postal_code : "",
             birthday: user ? user.birthday : "",
             gender: user ? user.gender : "",
-            civil_status: user ? user.gender : "",
+            civil_status: user ? user.civil_status : "",
+            nationality: user ? user.nationality : "",
+            phone_number: user ? user.phone_number : "",
+            email: user ? user.email : "",
         }
     });
 
@@ -138,7 +141,7 @@ export const UserForm = ({ user, onSubmit }) =>{
             </div>
             <br></br>
             
-            {/* Postal Code */}
+            {/* Birthday */}
             <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Birthday</label>
                 <div className="col-sm-6">
@@ -162,6 +165,7 @@ export const UserForm = ({ user, onSubmit }) =>{
                 <label className="col-sm-2 col-form-label">Gender</label>
                 <div className="col-sm-6">
                     <input 
+                        placeholder="Gender"
                         type="list"
                         list="gender" 
                         name="gender"
@@ -182,6 +186,7 @@ export const UserForm = ({ user, onSubmit }) =>{
                 <label className="col-sm-2 col-form-label">Civil Status</label>
                 <div className="col-sm-6">
                     <input 
+                        placeholder="Civil Status"
                         type="list"
                         list="civil_status" 
                         name="civil_status"
@@ -199,7 +204,64 @@ export const UserForm = ({ user, onSubmit }) =>{
             </div>
             <br></br>
 
+            {/* Nationality */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Nationality</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Nationality"
+                        className="form-control"
+                        type="text"
+                        name="nationality"
+                        id="nationality"
+                        autoComplete="off"
+                        {...register("nationality", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
             <br></br>
+
+            {/* Phone Number */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Phone Number</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="09XX-XXXX-XXX"
+                        pattern="[0-9]{4}-[0-9]{4}-[0-9]{3}"
+                        className="form-control"
+                        type="tel"
+                        name="phone_number"
+                        id="phone_number"
+                        autoComplete="off"
+                        {...register("phone_number", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+            {/* Email */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Email</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Email"
+                        className="form-control"
+                        type="email"
+                        name="email"
+                        id="email"
+                        autoComplete="off"
+                        {...register("email", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br/>
+
             <div className="form-group">
                 <button type="submit" className="btn btn-primary">
                     Save User
