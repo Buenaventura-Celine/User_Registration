@@ -18,10 +18,7 @@ const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
+  }
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
@@ -34,9 +31,9 @@ const StyledTableRow = withStyles((theme) => ({
 
 const useStyles = makeStyles({
    table:{
-       width: '96%',
+       width: '99%',
        marginTop: '3rem',
-       marginLeft: '2rem',
+       marginLeft: '0.2rem',
        marginRight: '2rem',
        marginBottom: '2rem'
    }
@@ -61,7 +58,7 @@ export const UserList = () => {
     fetch(`http://localhost:4000/${id}` , {
       method:'DELETE'
     }).then((result) => result.json()).then((resp)=>{
-      alert("User Deleted")
+      alert("User will be deleted")
       console.warn(resp)
       getUserList();
     })
@@ -71,14 +68,15 @@ export const UserList = () => {
             <Table>
                 <TableHead>
                     <TableRow>
+                        {/* Not all details should be displayed in the table.
+                        Only those relevant should be shown. */}
                         <StyledTableCell>Last Name</StyledTableCell>
                         <StyledTableCell>Frist Name</StyledTableCell>
                         <StyledTableCell>Middle Name</StyledTableCell>
-                        <StyledTableCell>Birthday</StyledTableCell> 
+                        <StyledTableCell>Age</StyledTableCell> 
+                        <StyledTableCell>Birthday</StyledTableCell>
                         <StyledTableCell>Gender</StyledTableCell>
                         <StyledTableCell>Civil Status</StyledTableCell>
-                        <StyledTableCell>Nationality</StyledTableCell>
-                        <StyledTableCell>Phone Number</StyledTableCell>
                         <StyledTableCell>Email</StyledTableCell>
                         <StyledTableCell>Action</StyledTableCell>
                     </TableRow>
@@ -89,11 +87,10 @@ export const UserList = () => {
                             <StyledTableCell>{user.name}</StyledTableCell>
                             <StyledTableCell>{user.first_name}</StyledTableCell>
                             <StyledTableCell>{user.middle_name}</StyledTableCell>
+                            <StyledTableCell>{user.age}</StyledTableCell>
                             <StyledTableCell>{user.birthday}</StyledTableCell>
                             <StyledTableCell>{user.gender}</StyledTableCell>
                             <StyledTableCell>{user.civil_status}</StyledTableCell>
-                            <StyledTableCell>{user.nationality}</StyledTableCell>
-                            <StyledTableCell>{user.phone_number}</StyledTableCell>
                             <StyledTableCell>{user.email}</StyledTableCell>
                             <StyledTableCell>
                               <IconButton color="default" aria-label="upload picture" href={`/edit/${user._id}`}>

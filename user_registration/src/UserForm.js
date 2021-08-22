@@ -7,13 +7,20 @@ export const UserForm = ({ user, onSubmit }) =>{
             name: user ? user.name : "",
             first_name: user ? user.first_name : "",
             middle_name: user ? user.middle_name : "",
+            age : user ? user.age : "",
+            birthday: user ? user.birthday : "",
+            birthplace: user ? user.birthplace : "",
+            gender: user ? user.gender : "",
             address_one: user ? user.address_one : "",
             address_two: user ? user.address_two : "",
             postal_code: user ? user.postal_code : "",
-            birthday: user ? user.birthday : "",
-            gender: user ? user.gender : "",
             civil_status: user ? user.civil_status : "",
             nationality: user ? user.nationality : "",
+            religion: user ? user.religion : "",
+            weight: user ? user.weight : "",
+            height: user ? user.height : "",
+            mother_name: user ? user.mother_name : "",
+            father_name: user ? user.father_name : "",
             phone_number: user ? user.phone_number : "",
             email: user ? user.email : "",
         }
@@ -84,6 +91,85 @@ export const UserForm = ({ user, onSubmit }) =>{
             </div>
             <br></br>
 
+            {/* Age */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Age</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Age"
+                        className="form-control"
+                        type="text"
+                        name="age"
+                        id="age"
+                        autoComplete="off"
+                        {...register("age", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+            {/* Birthday */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Birthday</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Birthday"
+                        className="form-control"
+                        type="date"
+                        name="birthday"
+                        id="birthday"
+                        autoComplete="off"
+                        {...register("birthday", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+            {/* Birthplace */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Birthplace</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Birthplace"
+                        className="form-control"
+                        type="text"
+                        name="birthplace"
+                        id="birthplace"
+                        autoComplete="off"
+                        {...register("birthplace", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+            {/* Gender */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Gender</label>
+                <div className="col-sm-6">
+                    <input 
+                        placeholder="Gender"
+                        type="list"
+                        list="gender" 
+                        name="gender"
+                        className="form-control"
+                        {...register("gender", {
+                            required: "Required",
+                        })}/>
+                        <datalist id="gender">
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </datalist>
+                </div>
+            </div>
+            <br></br>
+
+
             {/* Address Line 1 */}
             <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Address Line 1</label>
@@ -141,46 +227,8 @@ export const UserForm = ({ user, onSubmit }) =>{
             </div>
             <br></br>
             
-            {/* Birthday */}
-            <div className="form-group row">
-                <label className="col-sm-2 col-form-label">Birthday</label>
-                <div className="col-sm-6">
-                    <input
-                        placeholder="Birthday"
-                        className="form-control"
-                        type="date"
-                        name="birthday"
-                        id="birthday"
-                        autoComplete="off"
-                        {...register("birthday", {
-                            required: "Required",
-                        })}
-                    />
-                </div>
-            </div>
-            <br></br>
 
-            {/* Gender */}
-            <div className="form-group row">
-                <label className="col-sm-2 col-form-label">Gender</label>
-                <div className="col-sm-6">
-                    <input 
-                        placeholder="Gender"
-                        type="list"
-                        list="gender" 
-                        name="gender"
-                        className="form-control"
-                        {...register("gender", {
-                            required: "Required",
-                        })}/>
-                        <datalist id="gender">
-                            <option value="Female">Female</option>
-                            <option value="Male">Male</option>
-                        </datalist>
-                </div>
-            </div>
-            <br></br>
-
+            
             {/* Civil Status*/}
             <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Civil Status</label>
@@ -222,6 +270,104 @@ export const UserForm = ({ user, onSubmit }) =>{
                 </div>
             </div>
             <br></br>
+            
+            {/* Religion */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Religion</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Religion"
+                        className="form-control"
+                        type="text"
+                        name="religion"
+                        id="religion"
+                        autoComplete="off"
+                        {...register("religion", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+
+            {/* Weigt */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Weight</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Weight (in kilograms)"
+                        className="form-control"
+                        type="text"
+                        name="weight"
+                        id="weight"
+                        autoComplete="off"
+                        {...register("weight", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+            {/* Height */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Height</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Height (in meters)"
+                        className="form-control"
+                        type="text"
+                        name="height"
+                        id="height"
+                        autoComplete="off"
+                        {...register("height", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+            {/* Mother's Name */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Mother's Name</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Mother's Name"
+                        className="form-control"
+                        type="text"
+                        name="mother_name"
+                        id="mother_name"
+                        autoComplete="off"
+                        {...register("mother_name", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+            {/* Father's Name */}
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Father's Name</label>
+                <div className="col-sm-6">
+                    <input
+                        placeholder="Father's Name"
+                        className="form-control"
+                        type="text"
+                        name="father_name"
+                        id="father_name"
+                        autoComplete="off"
+                        {...register("father_name", {
+                            required: "Required",
+                        })}
+                    />
+                </div>
+            </div>
+            <br></br>
+
+
 
             {/* Phone Number */}
             <div className="form-group row">
@@ -267,6 +413,7 @@ export const UserForm = ({ user, onSubmit }) =>{
                     Save User
                 </button>
             </div>
+            <br></br>
         </form>
             
     );
